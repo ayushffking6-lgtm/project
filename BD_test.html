@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BD 2nd Page</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+    overflow-x:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #ffb6c1,
+        #ff758c,
+        #ff4d6d,
+        #ff1744
+    );
+
+    position:relative;
+}
+
+/* GLOW */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+    height:900px;
+
+    background:radial-gradient(
+        rgba(255,255,255,0.18),
+        transparent 70%
+    );
+
+    animation:bgGlow 4s infinite ease-in-out;
+}
+
+@keyframes bgGlow{
+
+    0%{
+        transform:scale(1);
+        opacity:0.5;
+    }
+
+    50%{
+        transform:scale(1.15);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:0.5;
+    }
+}
+
+/* FLOAT HEARTS */
+
+.float-heart{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    color:rgba(255,255,255,0.5);
+
+    animation:floatUp linear infinite;
+
+    user-select:none;
+}
+
+@keyframes floatUp{
+
+    0%{
+
+        transform:
+            translateY(0)
+            scale(0.6);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+            translateY(-120vh)
+            scale(1.8);
+
+        opacity:0;
+    }
+}
+
+/* LEFT TEXT */
+
+.left-text{
+
+    position:absolute;
+
+    left:4%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:420px;
+
+    z-index:100;
+}
+
+.title{
+
+    font-size:52px;
+
+    font-weight:900;
+
+    color:#fff;
+
+    margin-bottom:25px;
+
+    font-family:cursive;
+
+    animation:neonGlow 2s infinite alternate;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff4da6,
+        0 0 40px #ff1493;
+}
+
+.left-text ul{
+
+    list-style:none;
+}
+
+.left-text li{
+
+    font-size:36px;
+
+    font-weight:800;
+
+    margin:18px 0;
+
+    color:#fff;
+
+    font-family:cursive;
+
+    animation:colorShift 3s infinite alternate;
+
+    text-shadow:
+        0 0 8px #fff,
+        0 0 18px #ff66cc,
+        0 0 40px #ff1493;
+}
+
+.since{
+
+    margin-top:30px;
+
+    font-size:34px;
+
+    line-height:1.4;
+
+    font-weight:900;
+
+    color:#fff;
+
+    font-family:cursive;
+
+    animation:neonGlow 2s infinite alternate;
+}
+
+@keyframes neonGlow{
+
+    0%{
+
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #ff4da6,
+            0 0 40px #ff1493;
+    }
+
+    100%{
+
+        text-shadow:
+            0 0 15px #fff,
+            0 0 30px #00f0ff,
+            0 0 60px #00d9ff;
+    }
+}
+
+@keyframes colorShift{
+
+    0%{
+        color:#ffffff;
+    }
+
+    50%{
+        color:#ffe6f2;
+    }
+
+    100%{
+        color:#ffd1dc;
+    }
+}
+
+/* FLOWER */
+
+.flower{
+
+    position:relative;
+
+    width:520px;
+    height:520px;
+
+    z-index:10;
+}
+
+/* HEART */
+
+.heart{
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    background:#ff1e56;
+
+    transform:rotate(-45deg);
+
+    opacity:0;
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,0.5),
+        0 0 70px rgba(255,0,90,0.8);
+
+    animation-fill-mode:forwards;
+}
+
+.heart::before,
+.heart::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    background:#ff1e56;
+
+    border-radius:50%;
+}
+
+.heart::before{
+
+    top:-60px;
+    left:0;
+}
+
+.heart::after{
+
+    left:60px;
+    top:0;
+}
+
+/* HEART POSITIONS */
+
+.top{
+
+    left:200px;
+    top:40px;
+
+    animation:topAnim 2s forwards ease;
+}
+
+.left{
+
+    left:60px;
+    top:190px;
+
+    transform:rotate(-135deg);
+
+    animation:leftAnim 2s forwards ease;
+}
+
+.right{
+
+    right:60px;
+    top:190px;
+
+    transform:rotate(45deg);
+
+    animation:rightAnim 2s forwards ease;
+}
+
+.bottom-left{
+
+    left:125px;
+    bottom:55px;
+
+    transform:rotate(-180deg);
+
+    animation:bottomLeftAnim 2s forwards ease;
+}
+
+.bottom-right{
+
+    right:125px;
+    bottom:55px;
+
+    transform:rotate(90deg);
+
+    animation:bottomRightAnim 2s forwards ease;
+}
+
+/* ANIMATIONS */
+
+@keyframes topAnim{
+
+    0%{
+        top:-500px;
+        opacity:0;
+    }
+
+    100%{
+        top:40px;
+        opacity:1;
+    }
+}
+
+@keyframes leftAnim{
+
+    0%{
+        left:-500px;
+        opacity:0;
+    }
+
+    100%{
+        left:60px;
+        opacity:1;
+    }
+}
+
+@keyframes rightAnim{
+
+    0%{
+        right:-500px;
+        opacity:0;
+    }
+
+    100%{
+        right:60px;
+        opacity:1;
+    }
+}
+
+@keyframes bottomLeftAnim{
+
+    0%{
+        bottom:-500px;
+        left:-300px;
+        opacity:0;
+    }
+
+    100%{
+        bottom:55px;
+        left:125px;
+        opacity:1;
+    }
+}
+
+@keyframes bottomRightAnim{
+
+    0%{
+        bottom:-500px;
+        right:-300px;
+        opacity:0;
+    }
+
+    100%{
+        bottom:55px;
+        right:125px;
+        opacity:1;
+    }
+}
+
+/* CENTER IMAGE */
+
+.center-badge{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:190px;
+    height:190px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    z-index:50;
+
+    border:8px solid rgba(255,255,255,0.7);
+
+    box-shadow:
+        0 0 35px white,
+        0 0 80px #ff4d6d;
+
+    animation:badgeReveal 2s ease;
+}
+
+.center-badge img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+@keyframes badgeReveal{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(0)
+            rotate(-180deg);
+
+        opacity:0;
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1)
+            rotate(0deg);
+
+        opacity:1;
+    }
+}
+
+/* CAT */
+
+.cat-frame{
+
+    position:absolute;
+
+    right:9%;
+    top:6%;
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    z-index:120;
+
+    border:6px solid rgba(255,255,255,0.7);
+
+    box-shadow:
+        0 0 25px white,
+        0 0 60px #ff69b4;
+}
+
+.cat-frame img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+/* LOGIN */
+
+.login-box{
+
+    position:absolute;
+
+    right:4%;
+    top:58%;
+
+    transform:translateY(-50%);
+
+    width:360px;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(15px);
+
+    border:2px solid rgba(255,255,255,0.25);
+
+    z-index:100;
+}
+
+.login-box h2{
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:28px;
+
+    font-size:34px;
+
+    font-family:cursive;
+}
+
+.input-group{
+
+    margin-bottom:22px;
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.15);
+
+    border:2px solid rgba(255,255,255,0.2);
+
+    color:white;
+
+    font-size:16px;
+}
+
+.input-group input::placeholder{
+
+    color:rgba(255,255,255,0.8);
+}
+
+.login-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    font-family:cursive;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #ff69b4,
+        #ff1493
+    );
+
+    transition:0.3s;
+}
+
+.login-btn:hover{
+
+    transform:scale(1.05);
+}
+
+/* FIREWORKS */
+
+.firework{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    z-index:9999;
+}
+
+.particle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    left:0;
+    top:0;
+
+    box-shadow:
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 40px currentColor;
+
+    animation:
+        explode 2.5s ease-out forwards,
+        blink 0.3s infinite alternate;
+}
+
+@keyframes explode{
+
+    0%{
+
+        transform:
+            translate(0,0)
+            scale(0);
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+            translate(var(--dx), var(--dy))
+            scale(1.5);
+
+        opacity:0;
+    }
+}
+
+@keyframes blink{
+
+    0%{
+        filter:brightness(1);
+    }
+
+    100%{
+        filter:brightness(2.8);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+    body{
+
+        flex-direction:column;
+
+        padding:25px 12px;
+
+        overflow-y:auto;
+    }
+
+    .left-text{
+
+        position:relative;
+
+        left:auto;
+        top:auto;
+
+        transform:none;
+
+        width:100%;
+
+        text-align:center;
+
+        margin-bottom:10px;
+    }
+
+    .title{
+        font-size:34px;
+    }
+
+    .left-text li{
+        font-size:24px;
+    }
+
+    .since{
+        font-size:22px;
+    }
+
+    .flower{
+
+        width:320px;
+        height:320px;
+
+        margin:20px 0;
+    }
+
+    .heart{
+
+        width:75px;
+        height:75px;
+    }
+
+    .heart::before,
+    .heart::after{
+
+        width:75px;
+        height:75px;
+    }
+
+    .heart::before{
+        top:-37px;
+    }
+
+    .heart::after{
+        left:37px;
+    }
+
+    .top{
+        left:122px;
+        top:20px;
+    }
+
+    .left{
+        left:25px;
+        top:120px;
+    }
+
+    .right{
+        right:25px;
+        top:120px;
+    }
+
+    .bottom-left{
+        left:70px;
+        bottom:35px;
+    }
+
+    .bottom-right{
+        right:70px;
+        bottom:35px;
+    }
+
+    .center-badge{
+
+        width:130px;
+        height:130px;
+    }
+
+    .cat-frame{
+
+        position:relative;
+
+        top:auto;
+        right:auto;
+
+        width:120px;
+        height:120px;
+
+        margin:20px 0;
+    }
+
+    .login-box{
+
+        position:relative;
+
+        top:auto;
+        right:auto;
+
+        transform:none;
+
+        width:100%;
+
+        max-width:340px;
+
+        padding:25px;
+
+        margin-top:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOAT HEARTS -->
+
+<div class="float-heart" style="left:5%; font-size:22px; animation-duration:7s;">❤</div>
+<div class="float-heart" style="left:18%; font-size:28px; animation-duration:9s;">💖</div>
+<div class="float-heart" style="left:32%; font-size:25px; animation-duration:8s;">💕</div>
+<div class="float-heart" style="left:48%; font-size:22px; animation-duration:10s;">💘</div>
+<div class="float-heart" style="left:62%; font-size:30px; animation-duration:7s;">💗</div>
+<div class="float-heart" style="left:80%; font-size:26px; animation-duration:9s;">❤</div>
+<div class="float-heart" style="left:92%; font-size:22px; animation-duration:8s;">💖</div>
+
+<!-- LEFT TEXT -->
+
+<div class="left-text">
+
+    <h1 class="title">
+        It's Been :-
+    </h1>
+
+    <ul>
+
+        <li>21 Years 😘</li>
+        <li>252 Months 💋</li>
+        <li>1096 Weeks 💖</li>
+
+    </ul>
+
+    <p class="since">
+        Since You Came Into That World ✨
+    </p>
+
+</div>
+
+<!-- FLOWER -->
+
+<div class="flower">
+
+    <div class="heart top"></div>
+    <div class="heart left"></div>
+    <div class="heart right"></div>
+    <div class="heart bottom-left"></div>
+    <div class="heart bottom-right"></div>
+
+    <div class="center-badge">
+
+        <img src="AYUSH_BD.jpeg">
+
+    </div>
+
+</div>
+
+<!-- CAT -->
+
+<div class="cat-frame">
+
+    <img src="bdcat.webp">
+
+</div>
+
+<!-- LOGIN -->
+
+<div class="login-box">
+
+    <h2>
+        Secret Meow Login ✨
+    </h2>
+
+    <div class="input-group">
+
+        <input
+            type="text"
+            placeholder="Your nickname"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <input
+            type="password"
+            placeholder="(Your Birthdate DD/MM/YYYY)"
+        >
+
+    </div>
+
+    <button class="login-btn">
+        Enter Meow World 💖
+    </button>
+
+</div>
+
+<script>
+
+/* FIREWORKS */
+
+function createFireworks(){
+
+    const colors = [
+        "#ff1744",
+        "#ff4d6d",
+        "#ff85a2",
+        "#ffd166",
+        "#ffffff",
+        "#00f5ff",
+        "#ff00ff"
+    ];
+
+    for(let i = 0; i < 35; i++){
+
+        setTimeout(() => {
+
+            let firework =
+                document.createElement("div");
+
+            firework.classList.add("firework");
+
+            let x =
+                Math.random() * window.innerWidth;
+
+            let y =
+                Math.random() * window.innerHeight;
+
+            firework.style.left = x + "px";
+            firework.style.top = y + "px";
+
+            document.body.appendChild(firework);
+
+            for(let j = 0; j < 45; j++){
+
+                let particle =
+                    document.createElement("span");
+
+                particle.classList.add("particle");
+
+                let angle =
+                    (Math.PI * 2 * j) / 45;
+
+                let distance =
+                    Math.random() * 250 + 100;
+
+                let dx =
+                    Math.cos(angle) * distance;
+
+                let dy =
+                    Math.sin(angle) * distance;
+
+                particle.style.setProperty(
+                    "--dx",
+                    dx + "px"
+                );
+
+                particle.style.setProperty(
+                    "--dy",
+                    dy + "px"
+                );
+
+                particle.style.background =
+                    colors[
+                        Math.floor(
+                            Math.random() * colors.length
+                        )
+                    ];
+
+                particle.style.width =
+                    Math.random() * 10 + 6 + "px";
+
+                particle.style.height =
+                    particle.style.width;
+
+                firework.appendChild(particle);
+            }
+
+            setTimeout(() => {
+
+                firework.remove();
+
+            },2500);
+
+        }, i * 180);
+    }
+}
+
+/* LOGIN BUTTON */
+
+document.querySelector(".login-btn")
+.addEventListener("click", function(){
+
+    createFireworks();
+
+    setTimeout(() => {
+
+        window.location.href =
+            "BD_3rd.html";
+
+    },5000);
+
+});
+
+</script>
+
+</body>
+</html>
